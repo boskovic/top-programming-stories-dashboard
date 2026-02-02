@@ -35,7 +35,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
     testImplementation 'org.testcontainers:testcontainers-kafka'
-    testImplementation 'org.wiremock:wiremock:3.13.2'
+    testImplementation 'org.wiremock:wiremock-standalone:3.13.2'
+    testImplementation "org.wiremock:wiremock-jetty12:3.13.2"
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
