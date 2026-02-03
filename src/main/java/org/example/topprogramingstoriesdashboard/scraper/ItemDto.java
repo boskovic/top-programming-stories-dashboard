@@ -10,6 +10,6 @@ public record ItemDto(
         Integer score,
         Long time,
         String title,
-        String type,
+        ItemTypeDto type,
         String url
 ) { }

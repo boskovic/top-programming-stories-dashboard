@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static java.util.Objects.isNull;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 @WireMockTest(httpPort = DeserializationTest.HTTP_PORT)
 public class DeserializationTest {
@@ -63,7 +64,10 @@ public class DeserializationTest {
 
         var result = item.getItem(itemId);
 
-        assertThat(result.id()).isEqualTo(itemId);
+        assertSoftly(softAssertions -> {
+            softAssertions.assertThat(result.id()).isEqualTo(itemId);
+            softAssertions.assertThat(result.type()).isEqualTo(ItemTypeDto.STORY);
+        });
     }
 
     private String readJson(String pathInResources) throws IOException {
