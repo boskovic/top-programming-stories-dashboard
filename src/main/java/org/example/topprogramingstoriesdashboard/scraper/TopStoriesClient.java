@@ -16,7 +16,7 @@ public class TopStoriesClient implements TopStoriesGateway {
     }
 
     @Override
-    public List<Integer> getTopStories() {
+    public List<Long> getTopStories() {
         return RestClient
                 .builder()
                 .baseUrl(baseUrl)
