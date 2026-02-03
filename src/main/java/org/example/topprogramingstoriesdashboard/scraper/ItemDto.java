@@ -3,9 +3,9 @@ package org.example.topprogramingstoriesdashboard.scraper;
 import java.util.List;
 
 public record ItemDto(
+        Long id,
         String by,
         Integer descendants,
-        Long id,
         List<Integer> kids,
         Integer score,
         Long time,
