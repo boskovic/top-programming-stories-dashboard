@@ -15,7 +15,7 @@ public class NewStoriesClient implements NewStoriesGateway {
     }
 
     @Override
-    public List<Integer> getNewStories() {
+    public List<Long> getNewStories() {
         return RestClient
                 .builder()
                 .baseUrl(baseUrl)
