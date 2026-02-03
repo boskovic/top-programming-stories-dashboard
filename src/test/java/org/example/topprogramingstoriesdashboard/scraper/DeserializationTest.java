@@ -30,7 +30,6 @@ public class DeserializationTest {
                 .withBody(readJson("topstories.json"))
                 .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             ));
-
         TopStoriesGateway topStories = new TopStoriesClient(BASE_URL);
 
         List<Integer> result = topStories.getTopStories();
@@ -38,10 +37,19 @@ public class DeserializationTest {
         assertThat(result.size() == 500);
     }
 
-    @Disabled
     @Test
-    public void testNewStoriesDeserialization(){
+    public void testNewStoriesDeserialization() throws IOException {
+        stubFor(get(NewStoriesClient.NEW_STORIES_PATH)
+            .willReturn(
+                ok()
+                .withBody(readJson("newstories.json"))
+                .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+            ));
+        var newStories = new NewStoriesClient(BASE_URL);
 
+        List<Integer> result = newStories.getNewStories();
+
+        assertThat(result.size() == 500);
     }
 
     @Disabled
