@@ -6,10 +6,16 @@ public record ItemDto(
         Long id,
         String by,
         Integer descendants,
-        List<Integer> kids,
+        List<Long> kids,
         Integer score,
         Long time,
         String title,
         ItemTypeDto type,
-        String url
+        String url,
+        Boolean deleted,
+        String text,
+        Boolean dead,
+        Long parent,
+        Long poll,
+        List<Long> parts
 ) { }
