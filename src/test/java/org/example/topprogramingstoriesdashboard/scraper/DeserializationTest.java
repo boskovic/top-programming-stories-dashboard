@@ -30,9 +30,9 @@ public class DeserializationTest {
                 .withBody(readJson("topstories.json"))
                 .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             ));
-        TopStoriesGateway topStories = new TopStoriesClient(BASE_URL);
+        var topStories = new TopStoriesClient(BASE_URL);
 
-        List<Integer> result = topStories.getTopStories();
+        var result = topStories.getTopStories();
 
         assertThat(result.size() == 500);
     }
@@ -47,7 +47,7 @@ public class DeserializationTest {
             ));
         var newStories = new NewStoriesClient(BASE_URL);
 
-        List<Integer> result = newStories.getNewStories();
+        var result = newStories.getNewStories();
 
         assertThat(result.size() == 500);
     }
