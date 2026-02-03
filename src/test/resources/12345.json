@@ -1,0 +1,11 @@
+{
+  "by":"bootload",
+  "descendants":6,
+  "id":12345,
+  "kids":[12426,12505],
+  "score":6,
+  "time":1176412001,
+  "title":"Distributed file storage: MogileFS",
+  "type":"story",
+  "url":"http://www.uncov.com/2007/4/4/distributed-file-storage-with-mogilefs"
+}

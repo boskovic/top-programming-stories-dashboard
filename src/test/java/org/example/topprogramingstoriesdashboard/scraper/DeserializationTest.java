@@ -2,14 +2,12 @@ package org.example.topprogramingstoriesdashboard.scraper;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import joptsimple.internal.Strings;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static java.util.Objects.isNull;
@@ -52,10 +50,20 @@ public class DeserializationTest {
         assertThat(result.size() == 500);
     }
 
-    @Disabled
     @Test
-    public void testItemDeserialization(){
+    public void testItemDeserialization() throws IOException{
+        var itemId = 12345L;
+        stubFor(get("/item/" + itemId + ".json")
+                .willReturn(
+                    ok()
+                    .withBody(readJson(itemId + ".json"))
+                    .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                ));
+        var item = new ItemClient(BASE_URL);
 
+        var result = item.getItem(itemId);
+
+        assertThat(result.id()).isEqualTo(itemId);
     }
 
     private String readJson(String pathInResources) throws IOException {
