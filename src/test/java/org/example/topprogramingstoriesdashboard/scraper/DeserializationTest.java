@@ -13,6 +13,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static java.util.Objects.isNull;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @WireMockTest(httpPort = DeserializationTest.HTTP_PORT)
 public class DeserializationTest {
@@ -34,6 +35,18 @@ public class DeserializationTest {
         var result = topStories.getTopStories();
 
         assertThat(result.size() == 500);
+    }
+
+    @Test
+    public void topStoriesAreDeserializedToEmptySetWhenError(){
+        stubFor(get(TopStoriesClient.TOP_STORIES_PATH)
+                .willReturn(notFound())
+        );
+        var topStories = new TopStoriesClient(BASE_URL);
+
+        var result = topStories.getTopStories();
+
+        assertTrue(result.isEmpty());
     }
 
     @Test
