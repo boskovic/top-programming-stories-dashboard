@@ -90,8 +90,9 @@ public class DeserializationTest {
         var result = item.getItem(itemId);
 
         assertSoftly(softAssertions -> {
-            softAssertions.assertThat(result.id()).isEqualTo(itemId);
-            softAssertions.assertThat(result.type()).isEqualTo(ItemTypeDto.STORY);
+            softAssertions.assertThat(result.isPresent()).isTrue();
+            softAssertions.assertThat(result.get().id()).isEqualTo(itemId);
+            softAssertions.assertThat(result.get().type()).isEqualTo(ItemTypeDto.STORY);
         });
     }
 

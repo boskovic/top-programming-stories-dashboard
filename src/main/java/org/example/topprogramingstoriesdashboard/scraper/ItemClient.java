@@ -2,6 +2,8 @@ package org.example.topprogramingstoriesdashboard.scraper;
 
 import org.springframework.web.client.RestClient;
 
+import java.util.Optional;
+
 public class ItemClient implements ItemGateway {
 
     public static final String ITEM_PATH = "/item";
@@ -12,14 +14,19 @@ public class ItemClient implements ItemGateway {
     }
 
     @Override
-    public ItemDto getItem(Long id) {
-        return RestClient
-                .builder()
-                .baseUrl(baseUrl)
-                .build()
-                .get()
-                .uri(ITEM_PATH + "/" + id + ".json")
-                .retrieve()
-                .body(ItemDto.class);
+    public Optional<ItemDto> getItem(Long id) {
+        try {
+            return Optional.ofNullable(RestClient
+                    .builder()
+                    .baseUrl(baseUrl)
+                    .build()
+                    .get()
+                    .uri(ITEM_PATH + "/" + id + ".json")
+                    .retrieve()
+                    .body(ItemDto.class)
+            );
+        } catch (Exception e) {
+            return Optional.empty();
+        }
     }
 }

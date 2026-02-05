@@ -1,6 +1,8 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import java.util.Optional;
+
 public interface ItemGateway {
 
-    ItemDto getItem(Long id);
+    Optional<ItemDto> getItem(Long id);
 }
