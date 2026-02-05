@@ -65,6 +65,18 @@ public class DeserializationTest {
     }
 
     @Test
+    public void newStoriesAreDeserializedToEmptySetWhenError(){
+        stubFor(get(TopStoriesClient.TOP_STORIES_PATH)
+                .willReturn(notFound())
+        );
+        var newStories = new NewStoriesClient(BASE_URL);
+
+        var result = newStories.getNewStories();
+
+        assertTrue(result.isEmpty());
+    }
+
+    @Test
     public void itemsAreDeserializedCorrectly() throws IOException{
         var itemId = 12345L;
         stubFor(get("/item/" + itemId + ".json")

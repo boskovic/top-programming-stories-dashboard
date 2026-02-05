@@ -1,8 +1,10 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 
+import java.util.Collections;
 import java.util.List;
 
 public class NewStoriesClient implements NewStoriesGateway {
@@ -16,14 +18,18 @@ public class NewStoriesClient implements NewStoriesGateway {
 
     @Override
     public List<Long> getNewStories() {
-        return RestClient
-                .builder()
-                .baseUrl(baseUrl)
-                .build()
-                .get()
-                .uri(NEW_STORIES_PATH)
-                .retrieve()
-                .body(new ParameterizedTypeReference<>() {
-                });
+        try {
+            return RestClient
+                    .builder()
+                    .baseUrl(baseUrl)
+                    .build()
+                    .get()
+                    .uri(NEW_STORIES_PATH)
+                    .retrieve()
+                    .body(new ParameterizedTypeReference<>() {
+                    });
+        } catch (HttpClientErrorException e) {
+            return Collections.emptyList();
+        }
     }
 }
