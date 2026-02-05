@@ -1,7 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
-import java.util.List;
+import java.util.Set;
 
 public interface TopStoriesGateway {
-    List<Long> getTopStories();
+    Set<Long> getTopStories();
 }

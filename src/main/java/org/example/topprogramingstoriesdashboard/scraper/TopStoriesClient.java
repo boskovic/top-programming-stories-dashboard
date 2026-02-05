@@ -5,7 +5,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 public class TopStoriesClient implements TopStoriesGateway {
 
@@ -18,7 +18,7 @@ public class TopStoriesClient implements TopStoriesGateway {
     }
 
     @Override
-    public List<Long> getTopStories() {
+    public Set<Long> getTopStories() {
         try {
             return RestClient
                     .builder()
@@ -30,7 +30,7 @@ public class TopStoriesClient implements TopStoriesGateway {
                     .body(new ParameterizedTypeReference<>() {
                     });
         } catch (HttpClientErrorException e){
-            return Collections.emptyList();
+            return Collections.emptySet();
         }
     }
 }

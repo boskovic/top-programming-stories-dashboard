@@ -5,7 +5,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 public class NewStoriesClient implements NewStoriesGateway {
     public static final String NEW_STORIES_PATH = "/newstories.json";
@@ -17,7 +17,7 @@ public class NewStoriesClient implements NewStoriesGateway {
     }
 
     @Override
-    public List<Long> getNewStories() {
+    public Set<Long> getNewStories() {
         try {
             return RestClient
                     .builder()
@@ -29,7 +29,7 @@ public class NewStoriesClient implements NewStoriesGateway {
                     .body(new ParameterizedTypeReference<>() {
                     });
         } catch (HttpClientErrorException e) {
-            return Collections.emptyList();
+            return Collections.emptySet();
         }
     }
 }
