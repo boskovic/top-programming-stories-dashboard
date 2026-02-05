@@ -1,12 +1,12 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
-import java.util.List;
+import java.util.Set;
 
 public record ItemDto(
     Long id,
     String by,
     Integer descendants,
-    List<Long> kids,
+    Set<Long> kids,
     Integer score,
     Long time,
     String title,
@@ -17,5 +17,5 @@ public record ItemDto(
     Boolean dead,
     Long parent,
     Long poll,
-    List<Long> parts
+    Set<Long> parts
 ) { }
