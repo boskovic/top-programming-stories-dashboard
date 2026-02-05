@@ -1,12 +1,12 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
-import java.util.List;
+import java.util.Set;
 
 public record ItemMessage(
     Long id,
     String by,
     Integer descendants,
-    List<Long> kids,
+    Set<Long> kids,
     Integer score,
     Long time,
     String title,
@@ -17,7 +17,7 @@ public record ItemMessage(
     Boolean dead,
     Long parent,
     Long poll,
-    List<Long> parts,
-    List<Ranking> rankings
+    Set<Long> parts,
+    Set<Ranking> rankings
 ) {
 }
