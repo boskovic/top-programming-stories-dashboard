@@ -29,7 +29,7 @@ public class TopStoriesClient implements TopStoriesGateway {
                     .retrieve()
                     .body(new ParameterizedTypeReference<>() {
                     });
-        } catch (HttpClientErrorException e){
+        } catch (Exception e){
             return Collections.emptySet();
         }
     }

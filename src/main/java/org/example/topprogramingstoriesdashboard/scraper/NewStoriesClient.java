@@ -28,7 +28,7 @@ public class NewStoriesClient implements NewStoriesGateway {
                     .retrieve()
                     .body(new ParameterizedTypeReference<>() {
                     });
-        } catch (HttpClientErrorException e) {
+        } catch (Exception e) {
             return Collections.emptySet();
         }
     }
