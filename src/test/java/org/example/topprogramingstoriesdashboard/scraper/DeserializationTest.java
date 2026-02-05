@@ -22,7 +22,7 @@ public class DeserializationTest {
     private static final String BASE_URL = LOCALHOST + ":" + HTTP_PORT;
 
     @Test
-    public void testTopStoriesDeserialization() throws Exception {
+    public void topStoriesDeserializedCorrectly() throws Exception {
         stubFor(get(TopStoriesClient.TOP_STORIES_PATH)
             .willReturn(
                 ok()
@@ -37,7 +37,7 @@ public class DeserializationTest {
     }
 
     @Test
-    public void testNewStoriesDeserialization() throws IOException {
+    public void newStoriesAreDeserializedCorrectly() throws IOException {
         stubFor(get(NewStoriesClient.NEW_STORIES_PATH)
             .willReturn(
                 ok()
@@ -52,7 +52,7 @@ public class DeserializationTest {
     }
 
     @Test
-    public void testItemDeserialization() throws IOException{
+    public void itemsAreDeserializedCorrectly() throws IOException{
         var itemId = 12345L;
         stubFor(get("/item/" + itemId + ".json")
                 .willReturn(
