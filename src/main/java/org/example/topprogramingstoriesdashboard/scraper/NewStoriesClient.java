@@ -1,7 +1,6 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 
 import java.util.Collections;

@@ -23,7 +23,7 @@ public class DeserializationTest {
     private static final String BASE_URL = LOCALHOST + ":" + HTTP_PORT;
 
     @Test
-    public void topStoriesDeserializedCorrectly() throws Exception {
+    public void topStoriesDeserializedCorrectly() throws IOException {
         stubFor(get(TopStoriesClient.TOP_STORIES_PATH)
             .willReturn(
                 ok()
@@ -65,7 +65,7 @@ public class DeserializationTest {
     }
 
     @Test
-    public void newStoriesAreDeserializedToEmptySetWhenError(){
+    public void newStoriesAreDeserializedToEmptySetWhenError() {
         stubFor(get(TopStoriesClient.TOP_STORIES_PATH)
                 .willReturn(notFound())
         );
@@ -77,7 +77,7 @@ public class DeserializationTest {
     }
 
     @Test
-    public void itemsAreDeserializedCorrectly() throws IOException{
+    public void itemIsDeserializedCorrectly() throws IOException {
         var itemId = 12345L;
         stubFor(get("/item/" + itemId + ".json")
                 .willReturn(
@@ -94,6 +94,19 @@ public class DeserializationTest {
             softAssertions.assertThat(result.get().id()).isEqualTo(itemId);
             softAssertions.assertThat(result.get().type()).isEqualTo(ItemTypeDto.STORY);
         });
+    }
+
+    @Test
+    public void itemIsEmptyWhenError() {
+        var itemId = 12345L;
+        stubFor(get("/item/" + itemId + ".json")
+                    .willReturn(notFound())
+        );
+        var item = new ItemClient(BASE_URL);
+
+        var result = item.getItem(itemId);
+
+        assertThat(result.isEmpty()).isTrue();
     }
 
     private String readJson(String pathInResources) throws IOException {
