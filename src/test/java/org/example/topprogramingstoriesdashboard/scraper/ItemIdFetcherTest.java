@@ -24,9 +24,9 @@ public class ItemIdFetcherTest {
         12346L, Sets.newHashSet(Ranking.NEW),
         12347L, Sets.newHashSet(Ranking.TOP)
         );
-        var itemIdFetcher = new ItemIdFetcher(newStoriesGatewayMock, topStoriesGatewayMock);
+        var sus = new ItemIdFetcher(newStoriesGatewayMock, topStoriesGatewayMock);
 
-        var result = itemIdFetcher.fetchItemIds();
+        var result = sus.fetchItemIds();
 
         assertThat(expectedResult).isEqualTo(result);
     }
