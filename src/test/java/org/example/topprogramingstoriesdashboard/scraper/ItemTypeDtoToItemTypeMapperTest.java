@@ -8,7 +8,7 @@ public class ItemTypeDtoToItemTypeMapperTest {
 
     @Test
     public void mapItemTypeDtoToItemType() {
-        var mapper = new ItemDtoToItemMessageItemTypeDtoToItemTypeMapper();
+        var mapper = new ItemTypeDtoToItemTypeMapper();
 
         assertSoftly(softAssertions -> {
             softAssertions.assertThat(mapper.map(ItemTypeDto.JOB)).isEqualTo(ItemType.JOB);

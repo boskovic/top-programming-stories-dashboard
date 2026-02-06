@@ -1,6 +1,6 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
-public class ItemDtoToItemMessageItemTypeDtoToItemTypeMapper {
+public class ItemTypeDtoToItemTypeMapper {
 
 
     public ItemType map(ItemTypeDto itemTypeDto) {
