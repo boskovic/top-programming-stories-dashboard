@@ -35,7 +35,7 @@ public class ItemDtoToItemMessageMapperTest {
         );
         var mapper = new ItemDtoToItemMessageMapper();
 
-        ItemMessage result = mapper.map(itemDto, allRankings);
+        var result = mapper.map(itemDto, allRankings);
 
         assertSoftly(softAssertions -> {
                     softAssertions.assertThat(result.id()).isEqualTo(ID);
