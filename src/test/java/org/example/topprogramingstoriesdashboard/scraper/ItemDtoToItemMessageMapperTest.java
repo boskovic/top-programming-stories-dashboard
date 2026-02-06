@@ -27,7 +27,7 @@ public class ItemDtoToItemMessageMapperTest {
 
 
     @Test
-    public void mapItemDtoAndStorieRankingsToItemMessage() {
+    public void mapItemDtoAndStoryRankingsToItemMessage() {
         var rankings = Set.of(Ranking.values());
         var allRankings = Map.of(1L, rankings);
         var itemDto = new ItemDto(
