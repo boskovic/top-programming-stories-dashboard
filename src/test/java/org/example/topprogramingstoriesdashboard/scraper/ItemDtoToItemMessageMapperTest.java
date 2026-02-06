@@ -45,7 +45,7 @@ public class ItemDtoToItemMessageMapperTest {
                     softAssertions.assertThat(result.score()).isEqualTo(SCORE);
                     softAssertions.assertThat(result.time()).isEqualTo(TIME);
                     softAssertions.assertThat(result.title()).isEqualTo(TITLE);
-                    softAssertions.assertThat(result.type()).isEqualTo(TYPE);
+                    softAssertions.assertThat(result.type()).isEqualTo(ItemType.COMMENT);
                     softAssertions.assertThat(result.url()).isEqualTo(URL);
                     softAssertions.assertThat(result.deleted()).isEqualTo(DELETED);
                     softAssertions.assertThat(result.text()).isEqualTo(TEXT);

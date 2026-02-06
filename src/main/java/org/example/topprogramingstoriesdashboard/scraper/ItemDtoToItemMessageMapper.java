@@ -4,6 +4,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class ItemDtoToItemMessageMapper {
+
+    private final ItemTypeDtoToItemTypeMapper itemTypeMapper = new ItemTypeDtoToItemTypeMapper();
+
     public ItemMessage map(ItemDto itemDto, Map<Long, Set<Ranking>> rankingsMap) {
         return new ItemMessage(
                 itemDto.id(),
@@ -13,7 +16,7 @@ public class ItemDtoToItemMessageMapper {
                 itemDto.score(),
                 itemDto.time(),
                 itemDto.title(),
-                itemDto.type(),
+                itemTypeMapper.map(itemDto.type()),
                 itemDto.url(),
                 itemDto.deleted(),
                 itemDto.text(),

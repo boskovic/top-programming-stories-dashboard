@@ -10,7 +10,7 @@ public record ItemMessage(
     Integer score,
     Long time,
     String title,
-    ItemTypeDto type,
+    ItemType type,
     String url,
     Boolean deleted,
     String text,
