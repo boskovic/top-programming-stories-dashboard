@@ -49,3 +49,7 @@ tasks.named('bootBuildImage') {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+test {
+    maxHeapSize = "4g"
+}
