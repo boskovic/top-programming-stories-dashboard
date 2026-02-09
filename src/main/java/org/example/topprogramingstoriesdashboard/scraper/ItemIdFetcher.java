@@ -1,5 +1,6 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,7 +15,7 @@ public class ItemIdFetcher {
         this.topStoriesGateway = topStoriesGateway;
     }
 
-    public Object fetchItemIds() {
+    public Map<Long, Set<Ranking>> fetchItemIds() {
 
         var newStories = newStoriesGateway.getNewStories();
         var topStories = topStoriesGateway.getTopStories();
