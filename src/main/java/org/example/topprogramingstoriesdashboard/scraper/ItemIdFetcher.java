@@ -27,7 +27,8 @@ public class ItemIdFetcher {
         return allIds.stream()
                 .collect(Collectors.toMap(
                         id -> id,
-                        id -> getRankingsForItem(topStories, newStories, id)));
+                        id -> getRankingsForItem(topStories, newStories, id)
+                ));
 
     }
 
