@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.example.topprogramingstoriesdashboard.scraper.Ranking.*;
+
 public class ItemIdFetcher {
 
     private final NewStoriesGateway newStoriesGateway;
@@ -31,11 +33,11 @@ public class ItemIdFetcher {
 
     private Set<Ranking> getRankingsForItem(Set<Long> topStories, Set<Long> newStories, long itemId) {
         if (topStories.contains(itemId) && newStories.contains(itemId)) {
-            return Set.of(Ranking.TOP, Ranking.NEW);
+            return Set.of(NEW, TOP);
         } else if (topStories.contains(itemId)) {
-            return Set.of(Ranking.TOP);
+            return Set.of(TOP);
         } else {
-            return Set.of(Ranking.NEW);
+            return Set.of(NEW);
         }
     }
 }
