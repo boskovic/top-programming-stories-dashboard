@@ -1,6 +1,5 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public record ItemMessage(
@@ -29,7 +28,7 @@ public record ItemMessage(
         private Long id;
         private String by;
         private Integer descendants;
-        private Set<Long> kids = new HashSet<>();
+        private Set<Long> kids;
         private Integer score;
         private Long time;
         private String title;
@@ -40,8 +39,8 @@ public record ItemMessage(
         private Boolean dead;
         private Long parent;
         private Long poll;
-        private Set<Long> parts = new HashSet<>();
-        private Set<Ranking> rankings = new HashSet<>();
+        private Set<Long> parts;
+        private Set<Ranking> rankings;
 
         public Builder id(Long id) {
             this.id = id;
