@@ -8,23 +8,23 @@ public class ItemDtoToItemMessageMapper {
     private final ItemTypeDtoToItemTypeMapper itemTypeMapper = new ItemTypeDtoToItemTypeMapper();
 
     public ItemMessage map(ItemDto itemDto, Map<Long, Set<Ranking>> rankingsMap) {
-        return new ItemMessage(
-                itemDto.id(),
-                itemDto.by(),
-                itemDto.descendants(),
-                itemDto.kids(),
-                itemDto.score(),
-                itemDto.time(),
-                itemDto.title(),
-                itemTypeMapper.map(itemDto.type()),
-                itemDto.url(),
-                itemDto.deleted(),
-                itemDto.text(),
-                itemDto.dead(),
-                itemDto.parent(),
-                itemDto.poll(),
-                itemDto.parts(),
-                rankingsMap.get(itemDto.id())
-        );
+        return ItemMessage.builder()
+                .id(itemDto.id())
+                .by(itemDto.by())
+                .descendants(itemDto.descendants())
+                .kids(itemDto.kids())
+                .score(itemDto.score())
+                .time(itemDto.time())
+                .title(itemDto.title())
+                .type(itemTypeMapper.map(itemDto.type()))
+                .url(itemDto.url())
+                .deleted(itemDto.deleted())
+                .text(itemDto.text())
+                .dead(itemDto.dead())
+                .parent(itemDto.parent())
+                .poll(itemDto.poll())
+                .parts(itemDto.parts())
+                .rankings(rankingsMap.get(itemDto.id()))
+                .build();
     }
 }
