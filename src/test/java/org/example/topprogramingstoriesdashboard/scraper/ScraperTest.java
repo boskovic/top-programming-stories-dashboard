@@ -1,5 +1,9 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemGateway;
+import org.example.topprogramingstoriesdashboard.scraper.web.NewStoriesGateway;
+import org.example.topprogramingstoriesdashboard.scraper.web.TopStoriesGateway;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;

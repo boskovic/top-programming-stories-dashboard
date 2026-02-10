@@ -1,6 +1,8 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
 import com.google.common.collect.Sets;
+import org.example.topprogramingstoriesdashboard.scraper.web.NewStoriesGateway;
+import org.example.topprogramingstoriesdashboard.scraper.web.TopStoriesGateway;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;

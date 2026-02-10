@@ -1,4 +1,4 @@
-package org.example.topprogramingstoriesdashboard.scraper;
+package org.example.topprogramingstoriesdashboard.scraper.web;
 
 import java.util.Set;
 

@@ -1,5 +1,8 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.NewStoriesGateway;
+import org.example.topprogramingstoriesdashboard.scraper.web.TopStoriesGateway;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;

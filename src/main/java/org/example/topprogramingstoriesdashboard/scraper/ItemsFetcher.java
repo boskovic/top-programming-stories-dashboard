@@ -1,5 +1,8 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemGateway;
+
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;

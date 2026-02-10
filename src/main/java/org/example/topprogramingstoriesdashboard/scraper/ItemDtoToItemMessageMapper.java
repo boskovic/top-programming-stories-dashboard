@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
+
 import java.util.Map;
 import java.util.Set;
 

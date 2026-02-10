@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemType;
+
 import java.util.Set;
 
 public record ItemMessage(

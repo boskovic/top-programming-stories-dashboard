@@ -1,4 +1,4 @@
-package org.example.topprogramingstoriesdashboard.scraper;
+package org.example.topprogramingstoriesdashboard.scraper.web;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import joptsimple.internal.Strings;

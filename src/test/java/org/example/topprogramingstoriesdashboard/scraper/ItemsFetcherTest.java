@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemGateway;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
