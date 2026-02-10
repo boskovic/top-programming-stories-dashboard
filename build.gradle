@@ -24,6 +24,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-restclient'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.apache.kafka:kafka-streams'
+    implementation("org.apache.logging.log4j:log4j-api:2.25.3")
+    implementation("org.apache.logging.log4j:log4j-core:2.25.3")
     developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
     testImplementation 'org.assertj:assertj-core'
     testImplementation(platform("org.junit:junit-bom"))
