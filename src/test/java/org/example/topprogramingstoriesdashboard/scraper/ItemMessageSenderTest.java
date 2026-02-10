@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +16,9 @@ import java.util.Set;
 @SpringBootTest
 public class ItemMessageSenderTest {
     // Start Kafka container
-    static KafkaContainer kafkaContainer = new KafkaContainer(DockerImageName.parse("apache/kafka"));
+    private static final KafkaContainer kafkaContainer
+            = new KafkaContainer(DockerImageName.parse("apache/kafka"));
+    private static final Logger logger = LogManager.getLogger(ItemMessageSenderTest.class);
 
     static {
         kafkaContainer.start();
@@ -36,8 +40,8 @@ public class ItemMessageSenderTest {
         var sus = new ItemMessageSender(kafkaTemplate);
 
         sus.send(itemMessage);
-        // Usually you wait a bit or use a KafkaListener to verify
+
         Thread.sleep(2000); // simple wait for demo purposes
-        System.out.println("Message sent to Kafka container!");
+        logger.info("Message sent to Kafka container!");
     }
 }
