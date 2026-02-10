@@ -4,8 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
 import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessageSender;
+import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
+import org.jspecify.annotations.NonNull;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static java.util.stream.Collectors.toSet;
@@ -35,11 +39,12 @@ public class Scraper {
     public void scrapItems() {
         logger.info("Scraping started");
         var startedAt = System.currentTimeMillis();
-        var itemIdWithRankings = itemIdFetcher.fetchItemIds();
-        var itemDtos = itemsFetcher.fetchItems(itemIdWithRankings.keySet());
-        var itemMessages = itemDtos.stream()
-                .map(itemDto -> itemDtoToItemMessageMapper.map(itemDto, itemIdWithRankings))
-                .collect(toSet());
+
+        var itemIdsWithRankingsMap = itemIdFetcher.fetchItemIds();
+
+        var itemDtos = itemsFetcher.fetchItems(itemIdsWithRankingsMap.keySet());
+
+        var itemMessages = itemMessages(itemDtos, itemIdsWithRankingsMap);
 
         for (ItemMessage itemMessage : itemMessages){
             itemMessageSender.send(itemMessage);
@@ -47,5 +52,11 @@ public class Scraper {
 
         var endedAt = System.currentTimeMillis();
         logger.info("Scraping ended. It took: {}ms. Overall {} items are scraped.", (endedAt-startedAt), itemDtos.size());
+    }
+
+    private @NonNull Set<ItemMessage> itemMessages(Set<ItemDto> itemDtos, Map<Long, Set<Ranking>> itemIdWithRankings) {
+        return itemDtos.stream()
+                .map(itemDto -> itemDtoToItemMessageMapper.map(itemDto, itemIdWithRankings))
+                .collect(toSet());
     }
 }
