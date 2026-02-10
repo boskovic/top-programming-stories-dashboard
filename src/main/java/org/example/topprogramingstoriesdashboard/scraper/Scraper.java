@@ -2,6 +2,8 @@ package org.example.topprogramingstoriesdashboard.scraper;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessageSender;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.concurrent.TimeUnit;

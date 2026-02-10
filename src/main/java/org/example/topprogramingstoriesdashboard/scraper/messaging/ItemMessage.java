@@ -1,6 +1,6 @@
-package org.example.topprogramingstoriesdashboard.scraper;
+package org.example.topprogramingstoriesdashboard.scraper.messaging;
 
-import org.example.topprogramingstoriesdashboard.scraper.web.ItemType;
+import org.example.topprogramingstoriesdashboard.scraper.Ranking;
 
 import java.util.Set;
 

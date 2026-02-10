@@ -1,4 +1,4 @@
-package org.example.topprogramingstoriesdashboard.scraper.web;
+package org.example.topprogramingstoriesdashboard.scraper.messaging;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

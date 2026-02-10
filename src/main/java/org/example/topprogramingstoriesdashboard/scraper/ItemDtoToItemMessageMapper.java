@@ -1,5 +1,6 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
 import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
 
 import java.util.Map;

@@ -1,4 +1,4 @@
-package org.example.topprogramingstoriesdashboard.scraper;
+package org.example.topprogramingstoriesdashboard.scraper.messaging;
 
 import org.springframework.kafka.core.KafkaTemplate;
 

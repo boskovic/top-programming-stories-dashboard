@@ -1,7 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
 import org.example.topprogramingstoriesdashboard.scraper.web.ItemDto;
-import org.example.topprogramingstoriesdashboard.scraper.web.ItemType;
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemType;
 import org.example.topprogramingstoriesdashboard.scraper.web.ItemTypeDto;
 import org.junit.jupiter.api.Test;
 

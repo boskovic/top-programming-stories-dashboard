@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
+import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessageSender;
 import org.example.topprogramingstoriesdashboard.scraper.web.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
