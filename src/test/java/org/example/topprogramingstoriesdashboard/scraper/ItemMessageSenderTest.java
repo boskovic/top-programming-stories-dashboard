@@ -29,7 +29,7 @@ public class ItemMessageSenderTest {
     private KafkaTemplate<String, ItemMessage> kafkaTemplate;
 
     @Test
-    void testSendReceive() throws InterruptedException {
+    void testSend() throws InterruptedException {
         var ID = 10L;
         var rankings = Set.of(Ranking.NEW, Ranking.TOP);
         var itemMessage = ItemMessage.builder().id(ID).rankings(rankings).build();
