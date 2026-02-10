@@ -1,5 +1,7 @@
 package org.example.topprogramingstoriesdashboard.scraper;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.client.RestClient;
 
 import java.util.Optional;
@@ -7,6 +9,8 @@ import java.util.Optional;
 public class ItemClient implements ItemGateway {
 
     public static final String ITEM_PATH = "/item";
+    private static final Logger logger = LogManager.getLogger(ItemClient.class);
+
     private final String baseUrl;
 
     public ItemClient(String baseUrl) {
@@ -26,6 +30,7 @@ public class ItemClient implements ItemGateway {
                     .body(ItemDto.class)
             );
         } catch (Exception e) {
+            logger.warn("Fetching of item with the id {} failed", id, e);
             return Optional.empty();
         }
     }
