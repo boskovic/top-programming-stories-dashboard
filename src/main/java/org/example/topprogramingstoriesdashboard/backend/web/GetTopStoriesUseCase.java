@@ -4,5 +4,5 @@ import java.util.Set;
 
 public interface GetTopStoriesUseCase {
 
-    Set<StoryDto> getNewStoriesUseCase();
+    Set<StoryDto> getTopStories();
 }
