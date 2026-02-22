@@ -1,5 +1,9 @@
-package org.example.topprogramingstoriesdashboard.scraper;
+package org.example.topprogramingstoriesdashboard.scraper.configuration;
 
+import org.example.topprogramingstoriesdashboard.scraper.ItemDtoToItemMessageMapper;
+import org.example.topprogramingstoriesdashboard.scraper.ItemIdFetcher;
+import org.example.topprogramingstoriesdashboard.scraper.ItemsFetcher;
+import org.example.topprogramingstoriesdashboard.scraper.Scraper;
 import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
 import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessageSender;
 import org.example.topprogramingstoriesdashboard.scraper.web.*;
