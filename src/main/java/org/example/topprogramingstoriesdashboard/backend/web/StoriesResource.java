@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/stories")
 public class StoriesResource {
 
     @GetMapping("/top")
-    ResponseEntity<List<StoryDto>> topStories() {
+    ResponseEntity<Set<StoryDto>> topStories() {
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/new")
-    ResponseEntity<List<StoryDto>> newStories() {
+    ResponseEntity<Set<StoryDto>> newStories() {
         return ResponseEntity.ok().build();
     }
 }
