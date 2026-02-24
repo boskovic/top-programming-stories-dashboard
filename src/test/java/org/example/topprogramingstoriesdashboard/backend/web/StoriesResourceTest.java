@@ -1,6 +1,8 @@
 package org.example.topprogramingstoriesdashboard.backend.web;
 
 import org.assertj.core.util.Sets;
+import org.example.topprogramingstoriesdashboard.backend.service.GetNewStoriesUseCase;
+import org.example.topprogramingstoriesdashboard.backend.service.GetTopStoriesUseCase;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
