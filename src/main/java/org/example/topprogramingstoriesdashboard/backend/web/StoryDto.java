@@ -1,7 +1,5 @@
 package org.example.topprogramingstoriesdashboard.backend.web;
 
-import org.example.topprogramingstoriesdashboard.scraper.web.ItemTypeDto;
-
 import java.util.Set;
 
 public record StoryDto(
@@ -12,7 +10,7 @@ public record StoryDto(
     Integer score,
     Long time,
     String title,
-    ItemTypeDto type,
+    StoryTypeDto type,
     String url,
     Boolean deleted,
     String text,
@@ -33,7 +31,7 @@ public record StoryDto(
         private Integer score;
         private Long time;
         private String title;
-        private ItemTypeDto type;
+        private StoryTypeDto type;
         private String url;
         private Boolean deleted;
         private String text;
@@ -77,7 +75,7 @@ public record StoryDto(
             return this;
         }
 
-        public Builder type(ItemTypeDto type) {
+        public Builder type(StoryTypeDto type) {
             this.type = type;
             return this;
         }
