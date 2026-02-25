@@ -5,7 +5,6 @@ import org.example.topprogramingstoriesdashboard.scraper.web.ItemTypeDto;
 
 public class ItemTypeDtoToItemTypeMapper {
 
-
     public ItemType map(ItemTypeDto itemTypeDto) {
         return switch (itemTypeDto){
             case JOB -> ItemType.JOB;
