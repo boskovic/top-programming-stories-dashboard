@@ -17,7 +17,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-class KafkaConsumerServiceTest {
+class ConsumerServiceTest {
 
     private static final KafkaContainer kafkaContainer
             = new KafkaContainer(DockerImageName.parse("apache/kafka"));
