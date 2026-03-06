@@ -2,6 +2,7 @@ package org.example.topprogramingstoriesdashboard.scraper.messaging;
 
 import org.example.topprogramingstoriesdashboard.scraper.Ranking;
 
+import java.util.Objects;
 import java.util.Set;
 
 public record ItemMessage(
@@ -130,5 +131,20 @@ public record ItemMessage(
                     url, deleted, text, dead, parent, poll, parts, rankings
             );
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof ItemMessage(
+                Long id1, String by1, Integer descendants1, Set<Long> kids1, Integer score1, Long time1, String title1,
+                ItemType type1, String url1, Boolean deleted1, String text1, Boolean dead1, Long parent1, Long poll1,
+                Set<Long> parts1, Set<Ranking> rankings1
+        ))) return false;
+        return Objects.equals(id, id1) && Objects.equals(by, by1) && Objects.equals(time, time1) && Objects.equals(poll, poll1) && Objects.equals(url, url1) && Objects.equals(text, text1) && Objects.equals(parent, parent1) && Objects.equals(title, title1) && Objects.equals(dead, dead1) && Objects.equals(score, score1) && type == type1 && Objects.equals(kids, kids1) && Objects.equals(deleted, deleted1) && Objects.equals(parts, parts1) && Objects.equals(descendants, descendants1) && Objects.equals(rankings, rankings1);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
