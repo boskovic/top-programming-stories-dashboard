@@ -4,11 +4,11 @@ import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessage;
 import org.example.topprogramingstoriesdashboard.scraper.messaging.ItemMessageSender;
 import org.springframework.kafka.annotation.KafkaListener;
 
-public class KafkaConsumerService {
+public class ConsumerService {
 
     private final TopicsRepository topicsRepository;
 
-    public KafkaConsumerService(TopicsRepository topicsRepository) {
+    public ConsumerService(TopicsRepository topicsRepository) {
         this.topicsRepository = topicsRepository;
     }
 

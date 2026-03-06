@@ -1,6 +1,6 @@
 package org.example.topprogramingstoriesdashboard.backend.configuration;
 
-import org.example.topprogramingstoriesdashboard.backend.service.KafkaConsumerService;
+import org.example.topprogramingstoriesdashboard.backend.service.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ public class KafkaConfiguration {
     }
 
     @Bean
-    public KafkaConsumerService kafkaConsumerService(){
-        return new KafkaConsumerService(servicesConfiguration.topicsRepository());
+    public ConsumerService kafkaConsumerService(){
+        return new ConsumerService(servicesConfiguration.topicsRepository());
     }
 }
