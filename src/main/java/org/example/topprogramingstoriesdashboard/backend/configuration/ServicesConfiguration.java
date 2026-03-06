@@ -1,9 +1,6 @@
 package org.example.topprogramingstoriesdashboard.backend.configuration;
 
-import org.example.topprogramingstoriesdashboard.backend.service.GetNewStoriesUseCase;
-import org.example.topprogramingstoriesdashboard.backend.service.GetTopStoriesUseCase;
-import org.example.topprogramingstoriesdashboard.backend.service.NewStories;
-import org.example.topprogramingstoriesdashboard.backend.service.TopStories;
+import org.example.topprogramingstoriesdashboard.backend.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,5 +15,10 @@ public class ServicesConfiguration {
     @Bean
     public GetNewStoriesUseCase getNewStoriesUseCase() {
         return new NewStories();
+    }
+
+    @Bean
+    public TopicsRepository topicsRepository() {
+        return new TopicsRepository();
     }
 }
