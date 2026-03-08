@@ -16,6 +16,6 @@ public class MessagingConfiguration {
 
     @Bean
     public ConsumerService kafkaConsumerService(){
-        return new ConsumerService(servicesConfiguration.topicsRepository());
+        return new ConsumerService(servicesConfiguration.itemMessageRepository());
     }
 }

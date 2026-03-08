@@ -18,7 +18,7 @@ public class ServicesConfiguration {
     }
 
     @Bean
-    public ItemMessageRepository topicsRepository() {
+    public ItemMessageRepository itemMessageRepository() {
         return new ItemMessageRepository();
     }
 }
