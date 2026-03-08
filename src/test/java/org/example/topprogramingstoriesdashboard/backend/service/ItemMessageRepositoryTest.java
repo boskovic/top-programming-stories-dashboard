@@ -54,6 +54,21 @@ class ItemMessageRepositoryTest {
         assertEquals(Set.of(itemMessage1, itemMessage2), result);
     }
 
+    @Test
+    public void findAllTopItems(){
+        var itemMessage1 = itemMessage(1L, Set.of(NEW));
+        var itemMessage2 = itemMessage(2L, Set.of(NEW, TOP));
+        var itemMessage3 = itemMessage(3L, Set.of(TOP));
+        var sus = new ItemMessageRepository();
+        sus.save(itemMessage1);
+        sus.save(itemMessage2);
+        sus.save(itemMessage3);
+
+        var result = sus.findTopItems();
+
+        assertEquals(Set.of(itemMessage2, itemMessage3), result);
+    }
+
     private ItemMessage itemMessage(Long id, Set<Ranking> rankings) {
         return ItemMessage.builder()
                 .id(id)

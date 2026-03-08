@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.example.topprogramingstoriesdashboard.scraper.Ranking.NEW;
+import static org.example.topprogramingstoriesdashboard.scraper.Ranking.TOP;
 
 public class ItemMessageRepository {
 
@@ -27,6 +28,12 @@ public class ItemMessageRepository {
     public Set<ItemMessage> findNewItems() {
         return items.stream()
                 .filter(itemMessage -> itemMessage.rankings().contains(NEW))
+                .collect(Collectors.toSet());
+    }
+
+    public Set<ItemMessage> findTopItems() {
+        return items.stream()
+                .filter(itemMessage -> itemMessage.rankings().contains(TOP))
                 .collect(Collectors.toSet());
     }
 }
