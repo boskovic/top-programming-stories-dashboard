@@ -9,16 +9,21 @@ public class ServicesConfiguration {
 
     @Bean
     public GetTopStoriesUseCase getTopStoriesUseCase() {
-        return new TopStories();
+        return new TopStories(itemMessageRepository(), itemMessageToStoryDtoMapper());
     }
 
     @Bean
     public GetNewStoriesUseCase getNewStoriesUseCase() {
-        return new NewStories();
+        return new NewStories(itemMessageRepository(), itemMessageToStoryDtoMapper());
     }
 
     @Bean
     public ItemMessageRepository itemMessageRepository() {
         return new ItemMessageRepository();
+    }
+
+    @Bean
+    public ItemMessageToStoryDtoMapper itemMessageToStoryDtoMapper() {
+        return new ItemMessageToStoryDtoMapper();
     }
 }
