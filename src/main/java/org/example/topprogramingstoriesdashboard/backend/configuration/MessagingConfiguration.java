@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class KafkaConfiguration {
+public class MessagingConfiguration {
 
     private final ServicesConfiguration servicesConfiguration;
 
-    public KafkaConfiguration(@Autowired ServicesConfiguration servicesConfiguration) {
+    public MessagingConfiguration(@Autowired ServicesConfiguration servicesConfiguration) {
         this.servicesConfiguration = servicesConfiguration;
     }
 
