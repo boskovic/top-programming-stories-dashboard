@@ -35,7 +35,7 @@ class ConsumerServiceTest {
     private KafkaTemplate<String, ItemMessage> kafkaTemplate;
 
     @Autowired
-    private TopicsRepository topicsRepository;
+    private ItemMessageRepository itemMessageRepository;
 
     @Test
     public void sentMessageIsInRepository() throws Exception {
@@ -51,7 +51,7 @@ class ConsumerServiceTest {
 
         Thread.sleep(5000);
 
-        var result = topicsRepository.find(id);
+        var result = itemMessageRepository.find(id);
 
         assertTrue(result.isPresent());
     }

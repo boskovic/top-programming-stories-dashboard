@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TopicsRepositoryTest {
+class ItemMessageRepositoryTest {
 
     @Test
     public void findSavedInRepository() {
         var ID1 = 1L;
         var itemMessage = ItemMessage.builder().id(ID1).build();
-        var sus = new TopicsRepository();
+        var sus = new ItemMessageRepository();
         sus.save(itemMessage);
 
         var result = sus.find(ID1);
@@ -27,7 +27,7 @@ class TopicsRepositoryTest {
     @Test
     public void dontFindAnythingIfNotSaved() {
         var ID = 1L;
-        var sus = new TopicsRepository();
+        var sus = new ItemMessageRepository();
 
         var result = sus.find(ID);
 

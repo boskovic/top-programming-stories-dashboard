@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
-public class TopicsRepository {
+public class ItemMessageRepository {
 
     private final Set<ItemMessage> items = new HashSet<>();
 

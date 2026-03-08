@@ -6,14 +6,14 @@ import org.springframework.kafka.annotation.KafkaListener;
 
 public class ConsumerService {
 
-    private final TopicsRepository topicsRepository;
+    private final ItemMessageRepository itemMessageRepository;
 
-    public ConsumerService(TopicsRepository topicsRepository) {
-        this.topicsRepository = topicsRepository;
+    public ConsumerService(ItemMessageRepository itemMessageRepository) {
+        this.itemMessageRepository = itemMessageRepository;
     }
 
     @KafkaListener(topics = ItemMessageSender.KAFKA_TOPIC, groupId = "top-stories-group")
     public void listen(ItemMessage itemMessage){
-        topicsRepository.save(itemMessage);
+        itemMessageRepository.save(itemMessage);
     }
 }
